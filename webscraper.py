@@ -2,11 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 
 URL = 'https://www.monster.com/jobs/search/?q=Software-Developer&where=India'
-page = requests.get(URL)
-soup = BeautifulSoup(page.content, 'html.parser')
-results = soup.find(id='ResultsContainer')
+page = requests.get(URL)  # Performing the http request
+soup = BeautifulSoup(page.content, 'html.parser')  # Getting all the HTML code of the page
+results = soup.find(id='ResultsContainer') # Getting the specfic HTML element with a particular id
 # print(results.prettify()) # For printing out the entire structure of the HTML page in a readable format
-job_elems = results.find_all('section', class_='card-content')
+job_elems = results.find_all('section', class_='card-content') # Fetching all the section HTML elements from HTML page with a particular class
 
 # Loop for getting all the job listing given on a page
 print()
