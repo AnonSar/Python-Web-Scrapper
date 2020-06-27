@@ -1,7 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://www.monster.com/jobs/search/?q=Software-Developer&where=India'
+###########################################################################################
+#  Code for extracting the job openings for a particular position in a particular country #
+###########################################################################################
+
+positionName = "Software-Developer"  # Variable holding the name of desired position
+jobPositionOriginCountryName = "India"  # Variable holding the name of the origin country
+
+URL = 'https://www.monster.com/jobs/search/?q=%(position)s&where=%(country)s' % {"position": positionName, "country": jobPositionOriginCountryName}
 page = requests.get(URL)  # Performing the http request
 soup = BeautifulSoup(page.content, 'html.parser')  # Getting all the HTML code of the page
 results = soup.find(id='ResultsContainer') # Getting the specfic HTML element with a particular id
@@ -33,17 +40,21 @@ for job_elem in job_elems:
         print("---------------------------------------------------")
         print()
 
-# Code for extracting the application link to the job posting with a particular word 'python'
+##########################################################################################
+#  Code for extracting the application link to the job posting with a particular keyword #
+##########################################################################################
 
 print("APPLICATION LINK TO ALL THE JOB POSTINGS CONTAINING A PARTICULAR WORD")
 print("IN THEIR JOB TITLE FROM THE ABOVE SEARCH QUERY: ")
 
 print()
 
-python_jobs = results.find_all('h2', string=lambda text: 'python' in text.lower())
+specificKeywordVariable = "AWS"  # Variable for holding the specific keyword
+
+jobs = results.find_all('h2', string=lambda text: specificKeywordVariable)
 pjob_serial_no = 0
 
-for p_job in python_jobs:
+for p_job in jobs:
     link = p_job.find('a')['href']
     pjob_serial_no += 1
     print(pjob_serial_no, '.')
