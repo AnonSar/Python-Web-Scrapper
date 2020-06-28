@@ -49,7 +49,7 @@ print("IN THEIR JOB TITLE FROM THE ABOVE SEARCH QUERY: ")
 
 print()
 
-specificKeywordVariable = "AWS"  # Variable for holding the specific keyword
+specificKeywordVariable = ""  # Variable for holding the specific keyword
 
 jobs = results.find_all('h2', string=lambda text: specificKeywordVariable)
 pjob_serial_no = 0
