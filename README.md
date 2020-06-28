@@ -4,4 +4,6 @@ A web scrapper that fetches specific job openings from a particular country by p
 
 **Motivation:** A while a back I was looking for some internships, where I was manually going on different websites and making a list of the desired internships that were being offered by differnet companies. In order to make this tedious process less time consuming, I came up with an idea to write a python script which will help me in fetching desired job positions from a specific website.
 
+**NOTE:** As of 28/06/2020, this script is fully functional and provides the desired functionality as mentioned above.
+
 **Happy Coding :octocat:!**
