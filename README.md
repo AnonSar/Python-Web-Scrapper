@@ -1,4 +1,4 @@
-# Python Web Scrapper for Monster.com :snake:
+# Python Web Scrapper for [Monster.com](https://www.monster.com/) :snake:
 
 ![Python Badge](https://img.shields.io/badge/Python-Python%20Web%20Scraping-brightgreen?logo=python)
 
